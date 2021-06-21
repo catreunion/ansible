@@ -1,0 +1,44 @@
+- name: 1. Remove the default file "nosnap.pref"
+  ansible.builtin.file:
+    path: /etc/apt/preferences.d/nosnap.pref
+    state: absent
+
+- name: 2. Install apt packages
+  ansible.builtin.apt:
+    name: "{{ item }}"
+    state: latest
+  loop:
+  - curl
+  - git
+  - lm-sensors
+  - neofetch
+  - net-tools
+  - snapd
+  - tree
+  - unzip
+
+- name: 3. Install snap packages
+  community.general.snap:
+    name: "{{ item }}"
+  loop:
+  - htop
+#  - lxd
+
+- name: 4. Create a folder for storing the custom config file of NeoFetch
+  ansible.builtin.file:
+    path: /home/isaac/.config/neofetch
+    owner: isaac
+    group: isaac
+    state: directory
+    mode: '0755'
+
+- name: 5. Copy the custom config file of NeoFetch to remote node
+  ansible.builtin.copy:
+    src:  /home/isaac/.config/neofetch/config.conf
+    dest: /home/isaac/.config/neofetch/config.conf
+    owner: isaac
+    group: isaac
+    mode: '0644'
+
+- name: 6. Reboot remote node
+  reboot:

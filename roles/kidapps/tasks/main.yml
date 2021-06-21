@@ -1,0 +1,12 @@
+- name: Install childen apps
+  ansible.builtin.apt:
+    name: "{{ item }}"
+    state: latest
+  loop:
+  - childsplay
+  - tuxpaint
+  - tuxtype
+  - pysycache
+  - pysiogame
+  - lmemory
+  - bouncy

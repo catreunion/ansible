@@ -1,0 +1,45 @@
+- name: 1. Install apt packages
+  ansible.builtin.apt:
+    name: "{{ item }}"
+    state: latest
+  loop:
+  - pdfsam
+  - psensor
+  - terminator
+
+- name: 2. Install deb packages
+  ansible.builtin.apt:
+    deb: "{{ item }}"
+  loop:
+  - https://github.com/Ulauncher/Ulauncher/releases/download/5.11.0/ulauncher_5.11.0_all.deb
+  - https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
+  - https://cdn.akamai.steamstatic.com/client/installer/steam.deb
+  - https://github.com/angryip/ipscan/releases/download/3.7.6/ipscan_3.7.6_amd64.deb
+  - https://download.virtualbox.org/virtualbox/6.1.22/virtualbox-6.1_6.1.22-144080~Ubuntu~eoan_amd64.deb
+  - https://pkg.osquery.io/deb/osquery_4.8.0-1.linux_amd64.deb
+#  - https://github.com/ansible-semaphore/semaphore/releases/download/v2.6.9/semaphore_2.6.9_linux_amd64.deb
+
+- name: 3. Install snap packages
+  community.general.snap:
+    name: "{{ item }}"
+  loop:
+  - gnome-calculator
+  - gnome-system-monitor
+  - gydl
+  - ktube-media-downloader
+  - mailspring
+  - skype
+  - wethr
+  - whatsapp-for-linux
+  - youtube-dl
+  - zoom-client
+
+- name: 4. Install snap packages in classic condition
+  community.general.snap:
+    name: "{{ item }}"
+    classic: yes
+  loop:
+  - pycharm-community
+
+- name: 5. Reboot remote node
+  reboot:
