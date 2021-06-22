@@ -1,0 +1,21 @@
+- name: 1. Copy two public SSH keys
+  ansible.builtin.copy:
+    src:  "/home/isaac/.ssh/{{ item }}"
+    dest: "/home/isaac/.ssh/{{ item }}"
+    owner: isaac
+    group: isaac
+    mode: '0644'
+  loop:
+  - ansible.pub
+  - id_ed25519.pub
+
+- name: 2. Copy two private SSH keys
+  ansible.builtin.copy:
+    src:  "/home/isaac/.ssh/{{ item }}"
+    dest: "/home/isaac/.ssh/{{ item }}"            
+    owner: isaac
+    group: isaac
+    mode: '0600'
+  loop:
+  - ansible
+  - id_ed25519
