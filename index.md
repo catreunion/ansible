@@ -1,6 +1,6 @@
-# Isaac's Notes
+# Biggest Heading
 
-## References and Links
+## Middle Heading
 [Documentation](https://docs.github.com/categories/github-pages-basics/).
 [Editor on GitHub](https://github.com/catreunion/ansible/edit/gh-pages/index.md).
 [Jekyll](https://jekyllrb.com/) rebuilds / handles the display of your site.
@@ -10,9 +10,6 @@ Check the configuration file `_config.yml`
 
 ```markdown
 Available Components: 
-
-# Header 1
-## Header 2
 
 - Bulleted
 - List
