@@ -9,6 +9,5 @@
 # Remove dependencies that no longer needed
     autoremove: true
 
-- name: 2. Reboot remote node
+- name: 2. Reboot remote node(s)
   reboot:
-

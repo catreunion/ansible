@@ -1,0 +1,35 @@
+- name: 1. Install the classic LAMP stack
+  ansible.builtin.apt:
+    name: "{{ item }}"
+    state: latest
+  loop:
+  - apache2
+#  - aptitude
+#  - libapache2-mod-php
+#  - mysql-server
+#  - php
+#  - python3-pymysql
+#  - php-mysql
+
+#- name: 2. Reboot the remote node(s)
+#  reboot:
+
+- name: 3. Create a directory
+  ansible.builtin.file:
+    path: "/var/www/{{ http_host }}"
+    owner: "{{ app_user }}"
+    group: "{{ app_user }}"
+    state: directory
+    mode: '0755'
+
+- name: 4. Convert the template file apache.conf.j2 into a virtual host config file
+  template:
+    src: "apache.conf.j2"
+    dest: "/etc/apache2/sites-available/{{ http_conf }}"
+
+- name: 5. Disable the default Apache web site
+  shell: /usr/sbin/a2dissite 000-default.conf
+  when: disable_default
+
+- name: 6. Enable the new virtual host
+  shell: /usr/sbin/a2ensite {{ http_conf }}

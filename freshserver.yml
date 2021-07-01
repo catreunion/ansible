@@ -3,6 +3,16 @@
 - hosts: Target
   become: true
   roles:
-  - update
-  - essentialapps
-  - ufw
+#  - update
+#  - essentialapps
+#  - ufw
+  - LAMP
+
+  vars_files: variables.yml
+#  vars:
+#  - http_user: www-data
+#  - http_host: yourdomain.com
+#  - http_conf: yourdomain.com.conf
+#  - http_port: "80"
+#  - disable_default: true
+

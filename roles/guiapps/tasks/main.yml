@@ -33,6 +33,8 @@
   - whatsapp-for-linux
   - youtube-dl
   - zoom-client
+#  - drawio
+#  - rpi-imager
 
 - name: 4. Install snap packages in classic condition
   community.general.snap:
