@@ -3,12 +3,10 @@
 - hosts: Target
   become: true
   roles:
-#  - update
-#  - essentialapps
-#  - ufw
-  - LAMP
+  - update
+  - essentialapps
+  - ufw
 
-  vars_files: variables.yml
 #  vars:
 #  - http_user: www-data
 #  - http_host: yourdomain.com

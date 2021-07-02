@@ -1,0 +1,8 @@
+---
+
+- hosts: Target
+  become: true
+  roles:
+  - LAMP
+
+  vars_files: variables.yml

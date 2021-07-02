@@ -13,15 +13,15 @@
 #  - lm-sensors
   - neofetch
   - net-tools
-  - snapd
+#  - snapd
   - tree
   - unzip
 
-- name: 3. Install snap packages
-  community.general.snap:
-    name: "{{ item }}"
-  loop:
-  - htop
+#- name: 3. Install snap packages
+#  community.general.snap:
+#    name: "{{ item }}"
+#  loop:
+#  - htop
 #  - lxd
 
 - name: 4. Create a folder for storing the custom config file of NeoFetch

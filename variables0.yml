@@ -1,10 +1,10 @@
 # Define the variables used in LAMP.yml
 ---
 mysql_root_password: "$1$j9NsJKz1$jyNpI6rfVHBbcnm.GWgOO0"
-app_user:  "www-data"
-http_host: "catreunion.work"
+app_user: "www-data"
+http_host: "yourdomain.com"
 # Name of the config file that will be used to create a virtual host for a newly configured LAMP server
-http_conf: "catreunion.work.conf"
+http_conf: "yourdomain.com.conf"
 http_port: "80"
 # Whether or not to disable the default Apache website
 disable_default: true

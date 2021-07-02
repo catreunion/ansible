@@ -1,5 +1,5 @@
 [Target]
-192.168.1.35
+143.198.231.183
 
 [all:vars]
 ansible_python_interpreter=/usr/bin/python3
