@@ -1,0 +1,9 @@
+- name: 1. Update system
+  ansible.builtin.apt:
+    update_cache: true
+    upgrade: dist # Upgrade OS
+    autoclean: true # Remove unnecessary packages from caches
+    autoremove: true # Remove dependencies that no longer needed
+
+- name: 2. Reboot the remote node(s)
+  reboot:

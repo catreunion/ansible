@@ -3,16 +3,11 @@
 #   state: disabled / enabled / reloaded / reset
 #     Disable ufw on boot, and unload ufw
 #     Enable ufw on boot, and reload ufw
-#     Reload ufw
-#     Reset ufw to installation defaults & disable UFW
-    state: reset
+    state: reset # Reset to installation defaults & disable UFW
 
 - name: 2. Protect against brute-force login attacks via SSH
   community.general.ufw:
-#   rule: allow / deny / limit / reject
-#     deny <-- Deny connections if an IP address has attempted to initiate 6 connections in the last 30 seconds
-#   http://www.debian-administration.org/articles/187
-    rule: limit
+    rule: limit # allow / deny / limit / reject
     port: "{{ item }}"
     proto: tcp
   loop:

@@ -1,8 +1,0 @@
----
-
-- hosts: Target
-  become: true
-  roles:
-#  - update
-#  - essentialapps
-  - guiapps

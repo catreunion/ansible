@@ -1,0 +1,11 @@
+---
+
+- hosts: Target
+  become: true
+  roles:
+  - 00update
+  - 01essentialApps
+  - 02GUIApps
+  - 03SSH
+  - 05ufw
+#  - 09kidApps

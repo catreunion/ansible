@@ -3,9 +3,10 @@
 - hosts: Target
   become: true
   roles:
-  - update
-  - essentialapps
-  - ufw
+  - 00update
+  - 01essentialApps
+#  - 04LAMP
+  - 05ufw
 
 #  vars:
 #  - http_user: www-data

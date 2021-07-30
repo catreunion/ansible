@@ -1,4 +1,4 @@
-- name: 1. Copy two public SSH keys
+- name: 1. Copy the two public SSH keys
   ansible.builtin.copy:
     src:  "/home/isaac/.ssh/{{ item }}"
     dest: "/home/isaac/.ssh/{{ item }}"
@@ -9,7 +9,7 @@
   - ansible.pub
   - id_ed25519.pub
 
-- name: 2. Copy two private SSH keys
+- name: 2. Copy the two private SSH keys
   ansible.builtin.copy:
     src:  "/home/isaac/.ssh/{{ item }}"
     dest: "/home/isaac/.ssh/{{ item }}"            

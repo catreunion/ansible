@@ -5,14 +5,13 @@
   loop:
   - apache2
 #  - aptitude
+  - certbot
 #  - libapache2-mod-php
 #  - mysql-server
-#  - php
-#  - python3-pymysql
+  - php
 #  - php-mysql
-
-#- name: 2. Reboot the remote node(s)
-#  reboot:
+  - python3-certbot-apache
+#  - python3-pymysql
 
 - name: 3. Create a directory
   ansible.builtin.file:
@@ -33,3 +32,6 @@
 
 - name: 6. Enable the new virtual host
   shell: /usr/sbin/a2ensite {{ http_conf }}
+
+- name: 7. Reboot the remote node(s)
+  reboot:

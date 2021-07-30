@@ -1,2 +1,0 @@
-# ansible
-Automation with Ansible

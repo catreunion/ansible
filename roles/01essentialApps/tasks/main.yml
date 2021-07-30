@@ -10,10 +10,10 @@
   loop:
   - curl
   - git
-#  - lm-sensors
+  - lm-sensors
   - neofetch
   - net-tools
-#  - snapd
+  - snapd
   - tree
   - unzip
 
@@ -40,5 +40,5 @@
     group: isaac
     mode: '0644'
 
-- name: 6. Reboot remote node(s)
+- name: 6. Reboot the remote node(s)
   reboot:
