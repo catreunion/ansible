@@ -11,6 +11,7 @@
   ansible.builtin.apt:
     deb: "{{ item }}"
   loop:
+  - https://downloads.1password.com/linux/debian/amd64/stable/1password-latest.deb
   - https://github.com/Ulauncher/Ulauncher/releases/download/5.11.0/ulauncher_5.11.0_all.deb
   - https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
   - https://cdn.akamai.steamstatic.com/client/installer/steam.deb
